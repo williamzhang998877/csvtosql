@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.panpay.cloud.riskcontrol.dao.WorldDao">
+
+    <insert id="insertList" parameterType="java.util.List">
+        INSERT INTO world_check (uid, last_name, first_name)
+        VALUES
+        <foreach collection="list" item="it" separator=",">
+            (#{it.uid}, #{it.lastName}, #{it.firstName})
+        </foreach>
+    </insert>
+
+</mapper>
